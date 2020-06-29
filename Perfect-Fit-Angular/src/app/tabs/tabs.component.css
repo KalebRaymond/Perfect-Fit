@@ -1,0 +1,54 @@
+.tabBar
+{
+	background-color: transparent;
+	
+	display: inline-block;
+	overflow: overlay;
+	
+	margin-left: -40px;
+	margin-bottom: -5px;
+}
+
+.tab
+{
+	position: relative;
+	width: 200px;
+	height: 60px;
+	
+	margin-left: 30px;
+	display: inline-block;
+	background-color: #ffffaf;
+	
+	border: solid 5px #ee5f30;
+}
+
+.tab:hover
+{
+	cursor: pointer;
+}
+
+/* Remove bottom border on selected tab (without leaving a bevel in the corner) */
+.tab.active:before
+{
+	content: ' ';
+	display: block;
+	background-color: #ffffaf;
+	
+	position: absolute;
+	width: 200px;
+	height: 5px;
+	top: 60px;
+}
+
+a
+{
+	color: #ee5f30;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+	
+	text-decoration: none;
+}
+
