@@ -1,0 +1,35 @@
+/* Application-wide Styles */
+h1.title
+{
+	color: #ffffaf;
+	font-size: 50pt;
+	
+	margin-left: 10px;
+	margin-top: -5px;
+	margin-bottom: 0px;
+	
+	text-shadow: 5px 5px #ee5f30;
+}
+
+h2, h3
+{
+	color: #444;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: lighter;
+}
+
+body
+{
+	color: #fd8a55;
+}
+
+body, input[type="text"], button 
+{
+  
+}
+
+/* everywhere else */
+* 
+{
+	font-family: Source Code Pro Black;
+}

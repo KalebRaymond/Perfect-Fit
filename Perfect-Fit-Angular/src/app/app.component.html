@@ -1,0 +1,15 @@
+<h1 class="title">{{title}}</h1>
+
+<app-tabs>
+    <app-tab [tabTitle]="'My Clothes'">
+		My Clothes
+    </app-tab>
+	
+    <app-tab [tabTitle]="'Add Clothes'">
+        <app-clothing-form></app-clothing-form>
+    </app-tab>
+	
+	<app-tab [tabTitle]="'Get Outfits'">
+        Get Outfits
+    </app-tab>
+</app-tabs>
