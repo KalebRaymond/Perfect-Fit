@@ -1,0 +1,89 @@
+div.clothingFormCard
+{
+	display: inline-block;
+	
+	background-color: #ffdbcb;
+	width: 800px;
+	height: 300px;
+	margin: 45px;
+	
+	box-shadow: 12px 12px #ee608d;
+}
+
+form
+{
+	display: block;
+	float: left;
+	width: 350px;
+	padding-top: 5px;
+}
+
+div#container
+{
+	width: 350px;
+	padding: 15px 20px;
+}
+
+label
+{
+	color: #ee608d;
+	display: inline;
+}
+
+input
+{
+	float: right;
+	margin-top: -5px;
+	
+	border: solid 3px #ee608d;
+	
+	font-family: source code pro black;
+	font-size: 12pt;
+	background-color: #ffdbcb;
+	color: #ee608d;
+}
+
+label.color > input
+{
+	/*border: none*/
+}
+
+div.warning
+{
+	padding-left: 10px;
+	padding-top: 15px;	
+}
+
+button
+{
+	float: left;
+	
+	background-color: #ee608d;
+	color: #ffdbcb;
+	
+	font-family: source code pro black;
+	font-size: 12pt;
+	
+	border: solid 3px #ffdbcb;
+	box-shadow: 6px 6px #ee608d;
+}
+
+button:disabled
+{
+	background-color: #808080;
+	box-shadow: 6px 6px #505050;
+	color: #505050;
+}
+
+div.preview
+{
+	display: block;
+	float: left;
+	
+	width: 250px;
+	height: 260px;
+	margin: 16px 60px;
+	
+	background-color: white;
+	border: solid 5px #ee608d;
+}

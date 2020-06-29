@@ -1,0 +1,33 @@
+<div class="clothingFormCard">
+	<form [formGroup]="clothingForm" (ngSubmit)="onSubmit()">
+		<div id="container" class="articleDiv">
+			<label>Article:
+				<input type="text" formControlName="article" required>
+				<div *ngIf="article.invalid">
+					<div class="warning" *ngIf="article.errors.minlength">
+						Article must be at least 5 characters long (for testing purposes).
+					</div>
+				</div>
+			</label>
+		</div>
+
+		<div id="container" class="colorDiv">
+			<label class="color">Color:
+				<input type="text" formControlName="color">
+			</label>
+		</div>
+		
+		<div id="container" class="materialDiv">
+			<label>Material:
+				<input type="text" formControlName="material" required>
+			</label>
+		</div>
+
+		<div id="container" class="buttonDiv">
+			<button type="submit" [disabled]="!clothingForm.valid">Add +</button>
+		</div>
+	</form>
+	
+	<div class="preview">
+	</div>
+</div>
