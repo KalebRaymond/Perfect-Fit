@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormArray, Validators } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
 	selector: 'app-clothing-form',
@@ -8,7 +9,10 @@ import { FormBuilder, FormArray, Validators } from '@angular/forms';
 })
 export class ClothingFormComponent
 {
-	constructor(private fb: FormBuilder) { }
+	//Maybe put this header stuff in a service? Maybe.
+	headers = new HttpHeaders().set('Content-Type', 'application/json');
+		  
+	constructor(private fb: FormBuilder, private http: HttpClient) { }
 	
 	clothingForm = this.fb.group(
 	{
@@ -16,6 +20,23 @@ export class ClothingFormComponent
 		color: [''],
 		material: ['', Validators.required]
 	});
+	
+	postToServer()
+	{
+		var clothingObject = {	article: this.clothingForm.get('article').value,
+								color: this.clothingForm.get('color').value,
+								material: this.clothingForm.get('material').value
+		};
+		
+		console.warn("post");
+		this.http.post('http://localhost:4200/api/addClothes', clothingObject, { headers: this.headers })
+			.subscribe(data => {
+				console.log("test ", data);
+			},
+			error => {
+				console.log(error)
+			});
+	}
 	
 	resetValues()
 	{
@@ -29,6 +50,8 @@ export class ClothingFormComponent
 
 	onSubmit()
 	{
+		this.postToServer();
+		
 		// TODO: Use EventEmitter with form value (according to https://angular.io/guide/reactive-forms)
 		console.warn("something");
 		this.resetValues();
