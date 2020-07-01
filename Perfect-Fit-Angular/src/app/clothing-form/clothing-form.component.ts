@@ -28,7 +28,6 @@ export class ClothingFormComponent
 								material: this.clothingForm.get('material').value
 		};
 		
-		console.warn("post");
 		this.http.post('http://localhost:4200/api/addClothes', clothingObject, { headers: this.headers })
 			.subscribe(data => {
 				console.log("test ", data);
@@ -53,7 +52,6 @@ export class ClothingFormComponent
 		this.postToServer();
 		
 		// TODO: Use EventEmitter with form value (according to https://angular.io/guide/reactive-forms)
-		console.warn("something");
 		this.resetValues();
 	}
 	
