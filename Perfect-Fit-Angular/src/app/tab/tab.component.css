@@ -2,7 +2,8 @@
 {
 	background-color: #ffffaf;
 	width: 100vw - 10px;
-	height: 70vh;
+	height: 70hv; 
+	overflow: auto;
 	
 	border: solid 5px #ee5f30;
 }
