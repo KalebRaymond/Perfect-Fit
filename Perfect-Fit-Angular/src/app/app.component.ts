@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { TabsComponent } from './tabs/tabs.component';
+import { ClothingCardComponent } from './clothing-card/clothing-card.component';
 
 @Component({
   selector: 'app-root',
