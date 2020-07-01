@@ -1,0 +1,40 @@
+/* A lot of this CSS can be covered in app.component.css since clothing-form.component.css reuses the same style */
+div.cardDiv
+{
+	display: inline-block;
+	margin: 20px;
+	
+	background-color: #ffdbcb;
+	width: 200px;
+	height: 300px;
+	box-shadow: 12px 12px #ee608d;
+}
+
+p
+{
+	display: inline-block;
+	margin: 7px 7px 7px 10px;
+	color: #ee608d;
+}
+
+div.preview
+{
+	display: inline-block;
+	width: 170px;
+	height: 210px;
+	margin-left: 10px;
+	
+	background-color: white;
+	border: solid 5px #ee608d;
+}
+
+p.more
+{
+	float: right;
+}
+
+p.delete:hover, p.more:hover
+{
+	text-decoration: underline 2px;
+	cursor: pointer;
+}
