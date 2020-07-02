@@ -22,7 +22,8 @@ con.connect(function(err)
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.listen(3000, function () {
+app.listen(3000, function ()
+{
 	console.log('Example app listening on port 3000!');
 	
 	var sql = 'CREATE TABLE IF NOT EXISTS myclothes (article VARCHAR(255), color VARCHAR(255), material VARCHAR(255))';
@@ -32,13 +33,15 @@ app.listen(3000, function () {
 	});
 })
 
-app.use(function(req, res, next) {
+app.use(function(req, res, next) 
+{
 	res.header('Access-Control-Allow-Origin', '*');
 	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
 	next();
 });
 
-app.post('/api/addClothes', function (req, res) {
+app.post('/api/addClothes', function (req, res) 
+{
 	console.log(req.body);
 	
 	var article = req.body.article.toUpperCase();
@@ -60,4 +63,16 @@ app.post('/api/addClothes', function (req, res) {
 	
 	res.send({'data': 'test'});
 	return;
-})
+});
+
+app.get('/api/getClothes', function(req, res)
+{
+	sql = "SELECT * FROM myclothes";
+	
+	con.query(sql, function (err, result, fields) {
+		if (err) throw err;
+		res.send(result);
+	});
+	
+	return;
+});
