@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { TabComponent } from './tab/tab.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { ClothingFormComponent } from './clothing-form/clothing-form.component';
+import { ClothingCardComponent } from './clothing-card/clothing-card.component';
+import { MyClothesComponent } from './my-clothes/my-clothes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TabComponent,
     TabsComponent,
-    ClothingFormComponent
+    ClothingFormComponent,
+    ClothingCardComponent,
+    MyClothesComponent
   ],
   imports: [
     BrowserModule,
