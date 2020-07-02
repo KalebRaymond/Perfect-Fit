@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-clothing-card',
@@ -7,7 +7,14 @@ import { Component, Input } from '@angular/core';
 })
 export class ClothingCardComponent
 {
-	constructor() {}
+	name: string = 'DEFAULT';
 	
-	@Input('tabTitle') name: string;
+	constructor() {}
+
+	//This doesn't seem right... should be @Input(). Maybe have some kind of function somewhere return a string.
+	setName(val: string): void
+	{
+		this.name = val;
+		console.log( this.name );
+	}
 }
