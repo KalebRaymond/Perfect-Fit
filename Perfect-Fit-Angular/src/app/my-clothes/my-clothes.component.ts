@@ -22,9 +22,4 @@ export class MyClothesComponent implements OnInit
 	{
 		this.myClothes = this.clothesService.getUserClothes();
 	}
-	
-	test(): void
-	{
-		console.log("uuuuu");
-	}
 }
