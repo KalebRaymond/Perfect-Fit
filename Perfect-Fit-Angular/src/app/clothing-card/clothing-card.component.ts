@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-clothing-card',
@@ -7,14 +7,17 @@ import { Component } from '@angular/core';
 })
 export class ClothingCardComponent
 {
-	name: string = 'DEFAULT';
-	
+	@Input('articleName') name: string = 'DEFAULT';
+
 	constructor() {}
 
-	//This doesn't seem right... should be @Input(). Maybe have some kind of function somewhere return a string.
 	setName(val: string): void
 	{
 		this.name = val;
-		console.log( this.name );
+	}
+	
+	getName(): string
+	{
+		return this.name;
 	}
 }
