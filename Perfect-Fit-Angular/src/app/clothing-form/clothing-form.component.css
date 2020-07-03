@@ -30,10 +30,12 @@ label
 	display: inline;
 }
 
-input
+input, select
 {
 	float: right;
+	padding: 1px;
 	margin-top: -5px;
+	width: 220px;
 	
 	border: solid 3px #ee608d;
 	
@@ -43,6 +45,12 @@ input
 	color: #ee608d;
 }
 
+select
+{
+	width: 228px;
+	height: 28px;
+}
+	
 label.color > input
 {
 	/*border: none*/
