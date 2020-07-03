@@ -17,12 +17,10 @@ export class ClothesDbService
 
 		this.http.get('http://localhost:4200/api/getClothes', { headers: this.headers })
 			.subscribe(data => {
-				var i = 0;
-				for (var n in data)
+				for (var i in data)
 				{
 					clothes.push( new ClothingCardComponent() );
-					clothes[i].setName('shirt');
-					i++;
+					clothes[i].setName(data[i].article);
 				}
 			},
 			error => {
