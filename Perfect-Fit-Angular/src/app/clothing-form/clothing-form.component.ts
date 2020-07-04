@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormArray, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ClothesDbService } from '../clothes-db.service';
 
 @Component({
 	selector: 'app-clothing-form',
@@ -12,7 +13,7 @@ export class ClothingFormComponent
 	//Maybe put this header stuff in a service? Maybe.
 	headers = new HttpHeaders().set('Content-Type', 'application/json');
 		  
-	constructor(private fb: FormBuilder, private http: HttpClient) { }
+	constructor(private fb: FormBuilder, private clothesService: ClothesDbService) { }
 	
 	clothingForm = this.fb.group(
 	{
@@ -28,13 +29,7 @@ export class ClothingFormComponent
 								material: this.clothingForm.get('material').value
 		};
 		
-		this.http.post('http://localhost:4200/api/addClothes', clothingObject, { headers: this.headers })
-			.subscribe(data => {
-				console.log("test ", data);
-			},
-			error => {
-				console.log(error)
-			});
+		this.clothesService(clothingObject);
 	}
 	
 	resetValues()
