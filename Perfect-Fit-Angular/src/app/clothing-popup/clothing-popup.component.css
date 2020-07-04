@@ -1,0 +1,72 @@
+div.backdrop
+{
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	
+	background-color: #4d0015;
+	opacity: 0.5;
+}
+
+div.popupDiv
+{
+	position: fixed;
+	z-index: 2;
+	top: 50px;
+	left: 25vw;
+	
+	display: inline-block;
+	margin: 20px;
+	
+	background-color: #ffdbcb;
+	width: 600px;
+	height: 500px;
+	box-shadow: 12px 12px #ee608d;
+}
+
+div.preview
+{
+	display: inline-block;
+	float: left;
+	width: 221px;
+	height: 273px;
+	margin: 10px;
+	
+	background-color: white;
+	border: solid 5px #ee608d;
+}
+
+div.dressCodes
+{
+	display: inline-block;
+}
+
+p
+{
+	display: block;
+	margin: 7px 7px 7px 10px;
+	color: #ee608d;
+	font-size: 20px;
+}
+
+p.matches
+{
+	display: inline;
+	margin-left: 15px;
+	font-size: 16px;
+}
+
+p.close
+{
+	position: absolute;
+	bottom: 0px;
+}
+
+p.close:hover
+{
+	text-decoration: underline 2px;
+	cursor: pointer;
+}

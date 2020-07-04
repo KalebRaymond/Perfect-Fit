@@ -1,0 +1,23 @@
+<div class="backdrop" (click)="closeMe()"></div>
+
+<div class="popupDiv">
+	<p>{{ article | titlecase }}</p>
+	
+	<div class="preview"></div>
+	
+	<div class="colorDiv">
+		<p>Color: {{ color | titlecase }}</p>
+		<p class="matches">Matches with: </p>
+	</div>
+	
+	<div class="materialDiv">
+		<p>Material: {{ material | titlecase }}</p>
+		<p class="matches">Matches with: </p>
+	</div>
+	
+	<div class="dressCodes">
+		<p>Business Casual / Casual / Streetwear</p>
+	</div>
+	
+	<p class="close" (click)="closeMe()">Close<p>
+</div>
