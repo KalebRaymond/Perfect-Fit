@@ -9,6 +9,7 @@ import { TabsComponent } from './tabs/tabs.component';
 import { ClothingFormComponent } from './clothing-form/clothing-form.component';
 import { ClothingCardComponent } from './clothing-card/clothing-card.component';
 import { MyClothesComponent } from './my-clothes/my-clothes.component';
+import { ClothingPopupComponent } from './clothing-popup/clothing-popup.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MyClothesComponent } from './my-clothes/my-clothes.component';
     TabsComponent,
     ClothingFormComponent,
     ClothingCardComponent,
-    MyClothesComponent
+    MyClothesComponent,
+    ClothingPopupComponent
   ],
   imports: [
     BrowserModule,
