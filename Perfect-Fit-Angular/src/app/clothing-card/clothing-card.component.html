@@ -3,6 +3,10 @@
 	
 	<div class="preview"></div>
 	
-	<p class="delete">Delete</p>
-	<p class="more">More...</p>
+	<p class="delete" (click)="removeMe()">Delete</p>
+	<p class="more" (click)="openPopup()">More...</p>
 <div>
+
+<app-clothing-popup (closePopupEvent)="closePopup()" [hidden]="!this.popupOpen" 
+	[articleName]="this.name" [color]="this.color" [material]="this.material">
+</app-clothing-popup>

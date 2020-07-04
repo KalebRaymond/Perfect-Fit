@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { ClothingPopupComponent } from '../clothing-popup/clothing-popup.component';
 
 @Component({
   selector: 'app-clothing-card',
@@ -7,17 +8,50 @@ import { Component, Input } from '@angular/core';
 })
 export class ClothingCardComponent
 {
-	@Input('articleName') name: string = 'DEFAULT';
+	@Output('removeCardEvent') removeCardEvent: EventEmitter<any> = new EventEmitter();
+	
+	@Input('articleName') name: string = 'DEFAULT_A';
+	@Input('color') color: string = 'DEFAULT_C';
+	@Input('material') material: string = 'DEFAULT_M';
+	
+	popupOpen: boolean = false;
 
 	constructor() {}
 
-	setName(val: string): void
+	setProperties(name: string, color: string, material: string): void
 	{
-		this.name = val;
+		this.name = name;
+		this.color = color;
+		this.material = material;
 	}
 	
 	getName(): string
 	{
 		return this.name;
+	}
+	
+	getColor(): string
+	{
+		return this.color;
+	}
+	
+	getMaterial(): string
+	{
+		return this.material;
+	}
+	
+	openPopup(): void
+	{
+		this.popupOpen = true;
+	}
+	
+	closePopup(): void
+	{
+		this.popupOpen = false;
+	}
+	
+	removeMe()
+	{
+		this.removeCardEvent.emit({name: this.name, color: this.color, material: this.material});
 	}
 }
