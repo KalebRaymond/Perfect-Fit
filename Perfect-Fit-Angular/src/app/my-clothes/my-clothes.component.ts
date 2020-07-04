@@ -22,4 +22,10 @@ export class MyClothesComponent implements OnInit
 	{
 		this.myClothes = this.clothesService.getUserClothes();
 	}
+	
+	removeArticle($event): void
+	{
+		console.log("DELETION", $event.name, $event.color, $event.material);
+		this.clothesService.deleteArticle($event);
+	}
 }
