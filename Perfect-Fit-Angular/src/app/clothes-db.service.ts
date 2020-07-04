@@ -20,7 +20,7 @@ export class ClothesDbService
 				for (var i in data)
 				{
 					clothes.push( new ClothingCardComponent() );
-					clothes[i].setName(data[i].article);
+					clothes[i].setProperties(data[i].article, data[i].color, data[i].material);
 				}
 			},
 			error => {
@@ -28,5 +28,21 @@ export class ClothesDbService
 			});
 		
 		return clothes;
+	}
+	
+	addArticle(): void
+	{
+		this.http.post('http://localhost:4200/api/addClothes', clothingObject, { headers: this.headers })
+			.subscribe(data => {
+				console.log("test ", data);
+			},
+			error => {
+				console.log(error)
+			});
+	}
+	
+	deleteArticle($event): void
+	{
+		
 	}
 }
