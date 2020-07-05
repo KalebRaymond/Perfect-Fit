@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormArray, Validators } from '@angular/forms';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ClothesDbService } from '../clothes-db.service';
 
 @Component({
@@ -9,10 +8,7 @@ import { ClothesDbService } from '../clothes-db.service';
 	styleUrls: ['./clothing-form.component.css']
 })
 export class ClothingFormComponent
-{
-	//Maybe put this header stuff in a service? Maybe.
-	headers = new HttpHeaders().set('Content-Type', 'application/json');
-		  
+{	  
 	constructor(private fb: FormBuilder, private clothesService: ClothesDbService) { }
 	
 	clothingForm = this.fb.group(
@@ -29,7 +25,7 @@ export class ClothingFormComponent
 								material: this.clothingForm.get('material').value
 		};
 		
-		this.clothesService(clothingObject);
+		this.clothesService.addArticle(clothingObject);
 	}
 	
 	resetValues()
@@ -45,8 +41,6 @@ export class ClothingFormComponent
 	onSubmit()
 	{
 		this.postToServer();
-		
-		// TODO: Use EventEmitter with form value (according to https://angular.io/guide/reactive-forms)
 		this.resetValues();
 	}
 	
