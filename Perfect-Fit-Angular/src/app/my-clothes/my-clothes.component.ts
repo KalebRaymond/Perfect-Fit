@@ -15,7 +15,14 @@ export class MyClothesComponent implements OnInit
 
 	ngOnInit(): void
 	{
+		console.log("oninit");
 		this.updateClothes();
+	}
+	
+	ngAfterViewChecked()
+	{
+		console.log(this.updateFlag);
+		this.updateFlag = false;
 	}
 	
 	updateClothes(): void
@@ -25,7 +32,7 @@ export class MyClothesComponent implements OnInit
 	
 	removeArticle($event): void
 	{
-		console.log("DELETION", $event.name, $event.color, $event.material);
 		this.clothesService.deleteArticle($event);
+		this.updateClothes();
 	}
 }
