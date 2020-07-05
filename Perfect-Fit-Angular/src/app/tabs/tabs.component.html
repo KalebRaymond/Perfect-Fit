@@ -1,7 +1,7 @@
-<!-- Project selected tab into <ng-content>  -->
 <ul class="tabBar">
     <li class="tab" *ngFor="let tab of tabChildren" (click)="selectTab(tab)" [class.active]="tab.active">
         <a href="#">{{tab.title}}</a>
     </li>
 </ul>
+<!-- In app.component.html, the app-tabs in the body of this component are projected into this ng-content  -->
 <ng-content></ng-content>
