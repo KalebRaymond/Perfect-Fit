@@ -11,6 +11,7 @@ export class ClothesDbService
 	
 	constructor(private http: HttpClient) { }
 
+	//Returns all entries in myclothes database
 	getUserClothes(): Array<ClothingCardComponent>
 	{
 		var clothes: Array<ClothingCardComponent> = [];
@@ -30,19 +31,27 @@ export class ClothesDbService
 		return clothes;
 	}
 	
-	addArticle(): void
+	//Inserts article into myclothes database via server backend
+	addArticle(clothingObject): void
 	{
 		this.http.post('http://localhost:4200/api/addClothes', clothingObject, { headers: this.headers })
 			.subscribe(data => {
-				console.log("test ", data);
+				console.log("Added ", data);
 			},
 			error => {
 				console.log(error)
 			});
 	}
 	
+	//Deletes article from myclothes database via server backend
 	deleteArticle($event): void
 	{
-		
+		this.http.post('http://localhost:4200/api/removeClothes', $event, { headers: this.headers })
+			.subscribe(data => {
+				console.log("Removed ", data);
+			},
+			error => {
+				console.log(error)
+			});
 	}
 }
