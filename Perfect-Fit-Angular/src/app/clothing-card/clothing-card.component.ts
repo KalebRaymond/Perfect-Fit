@@ -52,6 +52,6 @@ export class ClothingCardComponent
 	
 	removeMe()
 	{
-		this.removeCardEvent.emit({name: this.name, color: this.color, material: this.material});
+		this.removeCardEvent.emit({article: this.name, color: this.color, material: this.material});
 	}
 }
