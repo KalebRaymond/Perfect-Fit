@@ -61,7 +61,31 @@ app.post('/api/addClothes', function (req, res)
 					console.log(req.body.article + ' added');
 				});
 	
-	res.send({'data': 'test'});
+	//res.send({'data': 'test'});
+	return;
+});
+
+app.post('/api/removeClothes', function(req, res)
+{
+	console.log(req.body);
+	
+	var article = req.body.article.toUpperCase();
+	var color = req.body.color.toUpperCase();
+	var material = req.body.material.toUpperCase();
+	
+	var sql = "DELETE FROM myclothes WHERE article = ? AND color = ? AND material = ?";
+	con.query(	sql, 	
+				[ 	
+					article,
+					color,
+					material
+				],						
+				function (err, result, fields) 
+				{
+					if (err) throw err;
+					console.log(req.body.article + ' deleted');
+				});
+	
 	return;
 });
 
