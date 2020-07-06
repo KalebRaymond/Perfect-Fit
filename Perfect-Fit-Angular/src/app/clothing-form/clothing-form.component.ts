@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormArray, Validators } from '@angular/forms';
 import { ClothesDbService } from '../clothes-db.service';
 
@@ -9,6 +9,8 @@ import { ClothesDbService } from '../clothes-db.service';
 })
 export class ClothingFormComponent
 {	  
+	@Input('imgSrc') imgSrc: string;
+	
 	constructor(private fb: FormBuilder, private clothesService: ClothesDbService) { }
 	
 	clothingForm = this.fb.group(
@@ -18,7 +20,7 @@ export class ClothingFormComponent
 		material: ['', Validators.required]
 	});
 	
-	postToServer()
+	postToServer(): void
 	{
 		var clothingObject = {	article: this.clothingForm.get('article').value,
 								color: this.clothingForm.get('color').value,
@@ -28,7 +30,7 @@ export class ClothingFormComponent
 		this.clothesService.addArticle(clothingObject);
 	}
 	
-	resetValues()
+	resetValues(): void
 	{
 		this.clothingForm.patchValue(
 		{
@@ -38,10 +40,37 @@ export class ClothingFormComponent
 		});
 	}
 
-	onSubmit()
+	onSubmit(): void
 	{
 		this.postToServer();
 		this.resetValues();
+	}
+	
+	updateImage(): void
+	{
+		var curArticle = this.clothingForm.get('article').value.toUpperCase();
+		if(curArticle === '')
+		{
+			this.imgSrc = 'assets/DEFAULT.png';
+			return;
+		}
+		
+		var curColor = this.clothingForm.get('color').value.toUpperCase();
+		if(curColor === '')
+		{
+			curColor = 'WHITE';
+		}
+		
+		var filename = curArticle + '_' + curColor;
+		
+		if(this.clothesService.validPaths.has(filename))
+		{
+			this.imgSrc = 'assets/' + curArticle + '_' + curColor + '.png';
+		}
+		else
+		{
+			this.imgSrc = 'assets/DEFAULT.png';
+		}
 	}
 	
 	get article() { return this.clothingForm.get('article'); }

@@ -88,10 +88,17 @@ div.preview
 	display: block;
 	float: left;
 	
-	width: 250px;
+	width: 200px;
 	height: 260px;
 	margin: 16px 60px;
 	
 	background-color: white;
 	border: solid 5px #ee608d;
+}
+
+img
+{
+	width: 200px;
+	height: auto;
+	image-rendering: crisp-edges;
 }

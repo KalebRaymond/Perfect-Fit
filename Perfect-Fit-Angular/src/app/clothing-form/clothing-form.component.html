@@ -2,7 +2,7 @@
 	<form [formGroup]="clothingForm" (ngSubmit)="onSubmit()">
 		<div id="container" class="articleDiv">
 			<label>Article:
-				<select formControlName="article" required>
+				<select formControlName="article" (change)="updateImage()" required>
 					<option value="Shirt">Shirt</option>
 					<option value="Pants">Pants</option>
 					<option value="Jacket">Jacket</option>
@@ -20,7 +20,7 @@
 
 		<div id="container" class="colorDiv">
 			<label class="color">Color:
-				<input type="text" formControlName="color">
+				<input type="text" (input)="updateImage()" formControlName="color">
 			</label>
 		</div>
 		
@@ -41,5 +41,6 @@
 	</form>
 	
 	<div class="preview">
+		<img src={{this.imgSrc}}>
 	</div>
 </div>
