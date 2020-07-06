@@ -19,12 +19,6 @@ export class MyClothesComponent implements OnInit
 		this.updateClothes();
 	}
 	
-	ngAfterViewChecked()
-	{
-		console.log(this.updateFlag);
-		this.updateFlag = false;
-	}
-	
 	updateClothes(): void
 	{
 		this.myClothes = this.clothesService.getUserClothes();

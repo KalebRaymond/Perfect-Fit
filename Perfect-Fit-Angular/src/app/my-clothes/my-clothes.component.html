@@ -1,5 +1,6 @@
-<div class="clothesContainer" (click)="updateClothes()">
+<div class="clothesContainer">
 	<app-clothing-card *ngFor="let article of myClothes" (removeCardEvent)="removeArticle($event)"
-		[articleName]="article.getName()" [color]="article.getColor()" [material]="article.getMaterial()">
+		[articleName]="article.getName()" [color]="article.getColor()" [material]="article.getMaterial()"
+		[imgSrc]="this.clothesService.getArticleImage(article)">
 	</app-clothing-card>
 </div>
