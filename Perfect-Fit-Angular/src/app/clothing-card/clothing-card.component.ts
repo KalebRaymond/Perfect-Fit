@@ -14,6 +14,8 @@ export class ClothingCardComponent
 	@Input('color') color: string = 'DEFAULT_C';
 	@Input('material') material: string = 'DEFAULT_M';
 	
+	@Input('imgSrc') imgSrc: string = 'assets/DEFAULT.png';
+	
 	popupOpen: boolean = false;
 
 	constructor() {}

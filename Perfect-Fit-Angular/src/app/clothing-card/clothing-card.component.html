@@ -1,12 +1,15 @@
 <div class="cardDiv">
 	<p class="title">{{ name | titlecase }}</p>
 	
-	<div class="preview"></div>
+	<div class="preview">
+		<img src={{this.imgSrc}}>
+	</div>
 	
 	<p class="delete" (click)="removeMe()">Delete</p>
 	<p class="more" (click)="openPopup()">More...</p>
 <div>
 
 <app-clothing-popup (closePopupEvent)="closePopup()" [hidden]="!this.popupOpen" 
-	[articleName]="this.name" [color]="this.color" [material]="this.material">
+	[articleName]="this.name" [color]="this.color" [material]="this.material"
+	[imgSrc]="this.imgSrc">
 </app-clothing-popup>
