@@ -3,7 +3,9 @@
 <div class="popupDiv">
 	<p>{{ article | titlecase }}</p>
 	
-	<div class="preview"></div>
+	<div class="preview">
+		<img src={{this.imgSrc}}>
+	</div>
 	
 	<div class="colorDiv">
 		<p>Color: {{ color | titlecase }}</p>
@@ -20,4 +22,5 @@
 	</div>
 	
 	<p class="close" (click)="closeMe()">Close<p>
+	<p class="outfits" (click)="closeMe()">Create outfits<p>
 </div>

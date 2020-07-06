@@ -11,8 +11,8 @@ export class ClothingPopupComponent implements OnInit
 	
 	@Input('articleName') article: string = 'DEFAULT_A';
 	@Input('color') color: string = 'DEFAULT_C';
-	@Input('material') material: string = 'DEFAULT_M'
-	
+	@Input('material') material: string = 'DEFAULT_M';
+	@Input('imgSrc') imgSrc: string = 'assets/DEFAULT.png';
 	@Input('hide') hide: boolean = true;
 	
 	constructor() { }
