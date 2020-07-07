@@ -10,6 +10,8 @@ import { ClothingFormComponent } from './clothing-form/clothing-form.component';
 import { ClothingCardComponent } from './clothing-card/clothing-card.component';
 import { MyClothesComponent } from './my-clothes/my-clothes.component';
 import { ClothingPopupComponent } from './clothing-popup/clothing-popup.component';
+import { OutfitComponent } from './outfit/outfit.component';
+import { OutfitsComponent } from './outfits/outfits.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ClothingPopupComponent } from './clothing-popup/clothing-popup.componen
     ClothingFormComponent,
     ClothingCardComponent,
     MyClothesComponent,
-    ClothingPopupComponent
+    ClothingPopupComponent,
+    OutfitComponent,
+    OutfitsComponent
   ],
   imports: [
     BrowserModule,
