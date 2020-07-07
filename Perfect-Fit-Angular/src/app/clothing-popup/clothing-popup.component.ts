@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { EventFlagsService } from '../event-flags.service';
 
 @Component({
 	selector: 'app-clothing-popup',
@@ -15,7 +16,7 @@ export class ClothingPopupComponent implements OnInit
 	@Input('imgSrc') imgSrc: string = 'assets/DEFAULT.png';
 	@Input('hide') hide: boolean = true;
 	
-	constructor() { }
+	constructor(private eventFlagsService: EventFlagsService) { }
 
 	ngOnInit(): void 
 	{
@@ -24,6 +25,12 @@ export class ClothingPopupComponent implements OnInit
 	
 	closeMe(): void
 	{
+		this.closePopupEvent.emit();
+	}
+	
+	createOutfits(): void
+	{
+		this.eventFlagsService.createOutfitsFlag = true;
 		this.closePopupEvent.emit();
 	}
 	
