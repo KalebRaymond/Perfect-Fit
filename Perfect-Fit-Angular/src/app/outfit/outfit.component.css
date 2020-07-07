@@ -1,0 +1,62 @@
+div.spacer
+{
+	width: 90vw;
+}
+
+div.clothesContainer
+{
+	display: inline-block;
+	margin: 20px;
+	padding-right: 15px;
+	float: left;
+	
+	background-color: #ffdbcb;
+	width: auto;
+	height: 270px;
+	box-shadow: 12px 12px #ee608d;
+}
+
+div.articleContainer
+{
+	display: inline-block;
+	width: 170px;
+	height: 270px;
+	float: left;
+	
+	margin-left: 15px;
+	margin-right: 10px;
+}
+
+div.preview
+{
+	display: inline-block;
+	width: 170px;
+	height: 210px;
+	float: left;
+	
+	background-color: white;
+	border: solid 5px #ee608d;
+}
+
+p
+{
+	display: inline-block;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	float: left;
+	
+	color: #ee608d;
+}
+
+div.separator
+{
+	display: inline-block;
+	float: left;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	
+	background-color: #ee5f30;
+	width: 90vw;
+	height: 3px;
+}
