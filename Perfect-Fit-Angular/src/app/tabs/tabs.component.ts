@@ -3,31 +3,40 @@
 */
 
 import { Component, AfterContentInit, ContentChildren, Directive, QueryList } from '@angular/core';
-
 import { TabComponent } from '../tab/tab.component';
+import { EventFlagsService } from '../event-flags.service';
 
 @Component({
 	selector: 'app-tabs',
 	templateUrl: './tabs.component.html',
 	styleUrls: ['./tabs.component.css']
 })
-export class TabsComponent implements AfterContentInit {
+export class TabsComponent{
 
 	//Retrieve children <app-tag> from <app-tabs> element
 	@ContentChildren(TabComponent) tabChildren: QueryList<TabComponent>;
 	 
-	constructor() { }
+	constructor(private eventFlagsService: EventFlagsService) { }
 	
 	ngAfterContentInit()
 	{
 		this.selectTab(this.tabChildren.first);
 	}
 	
+	ngDoCheck()
+	{
+		if(this.eventFlagsService.createOutfitsFlag == true)
+		{
+			this.selectTab(this.tabChildren.last);
+			this.eventFlagsService.createOutfitsFlag = false;
+		}
+	}
+	
 	selectTab(tab: TabComponent)
 	{
 		//Deactivate all tabs
 		this.tabChildren.toArray().forEach(tab=>tab.active = false);
-		
+
 		tab.active = true;
 	}
 }

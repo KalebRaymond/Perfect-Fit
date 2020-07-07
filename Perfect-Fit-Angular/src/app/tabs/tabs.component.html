@@ -3,5 +3,5 @@
         <a href="#">{{tab.title}}</a>
     </li>
 </ul>
-<!-- In app.component.html, the app-tabs in the body of this component are projected into this ng-content  -->
-<ng-content></ng-content>
+<!-- In app.component.html, the app-tabs in the body of this component are projected into this ng-content selectTab(this.tabChildren[2]) -->
+<ng-content (createOutfitsEvent)="console.log('uh')"></ng-content>
