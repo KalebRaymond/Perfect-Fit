@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormArray, Validators } from '@angular/forms';
 import { ClothesDbService } from '../clothes-db.service';
+import { EventFlagsService } from '../event-flags.service';
 
 @Component({
 	selector: 'app-clothing-form',
@@ -11,7 +12,7 @@ export class ClothingFormComponent
 {	  
 	@Input('imgSrc') imgSrc: string;
 	
-	constructor(private fb: FormBuilder, private clothesService: ClothesDbService) { }
+	constructor(private fb: FormBuilder, private clothesService: ClothesDbService, private eventFlagsService: EventFlagsService) { }
 	
 	clothingForm = this.fb.group(
 	{
@@ -43,6 +44,7 @@ export class ClothingFormComponent
 	onSubmit(): void
 	{
 		this.postToServer();
+		this.eventFlagsService.updateMyClothesFlag = true;
 		this.resetValues();
 	}
 	
