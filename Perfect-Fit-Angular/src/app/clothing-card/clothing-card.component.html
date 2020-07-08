@@ -1,5 +1,5 @@
 <div class="cardDiv">
-	<p class="title">{{ name | titlecase }}</p>
+	<p class="title">{{ article | titlecase }}</p>
 	
 	<div class="preview">
 		<img src={{this.imgSrc}}>
@@ -10,6 +10,6 @@
 <div>
 
 <app-clothing-popup (closePopupEvent)="closePopup()" [hidden]="!this.popupOpen" 
-	[articleName]="this.name" [color]="this.color" [material]="this.material"
+	[articleName]="this.article" [color]="this.color" [material]="this.material"
 	[imgSrc]="this.imgSrc">
 </app-clothing-popup>

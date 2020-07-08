@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OutfitComponent } from '../outfit/outfit.component';
 import { ClothesDbService } from '../clothes-db.service';
+import { EventFlagsService } from '../event-flags.service';
+import { ClothingObject } from '../clothing-object';
 
 @Component({
 	selector: 'app-outfits',
@@ -9,21 +11,26 @@ import { ClothesDbService } from '../clothes-db.service';
 })
 export class OutfitsComponent implements OnInit 
 {
-	outfits: Array<OutfitComponent> = [
-		new OutfitComponent(this.clothesService),
-		new OutfitComponent(this.clothesService),
-		new OutfitComponent(this.clothesService),
-	];
+	outfits: Array<OutfitComponent> = [];
 	
-	constructor(private clothesService: ClothesDbService) { }
+	constructor(private clothesService: ClothesDbService, private eventFlagsService: EventFlagsService) { }
 
 	ngOnInit(): void 
 	{
 		
 	}
 	
-	generateOutfits(): void
+	ngDoCheck(): void
 	{
-		
+		if(this.eventFlagsService.createOutfitsFlag == true)
+		{
+			this.generateOutfits(this.eventFlagsService.selectedArticle);
+			this.eventFlagsService.createOutfitsFlag = false;
+		}
+	}
+	
+	generateOutfits(clothingObject: ClothingObject): void
+	{
+		this.outfits = this.clothesService.getOutfits(clothingObject);
 	}
 }

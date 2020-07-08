@@ -10,7 +10,7 @@ export class ClothingCardComponent
 {
 	@Output('removeCardEvent') removeCardEvent: EventEmitter<any> = new EventEmitter();
 	
-	@Input('articleName') name: string = 'DEFAULT_A';
+	@Input('articleName') article: string = 'DEFAULT_A';
 	@Input('color') color: string = 'DEFAULT_C';
 	@Input('material') material: string = 'DEFAULT_M';
 	
@@ -22,24 +22,9 @@ export class ClothingCardComponent
 
 	setProperties(name: string, color: string, material: string): void
 	{
-		this.name = name;
+		this.article = name;
 		this.color = color;
 		this.material = material;
-	}
-	
-	getName(): string
-	{
-		return this.name;
-	}
-	
-	getColor(): string
-	{
-		return this.color;
-	}
-	
-	getMaterial(): string
-	{
-		return this.material;
 	}
 	
 	openPopup(): void
@@ -54,6 +39,6 @@ export class ClothingCardComponent
 	
 	removeMe()
 	{
-		this.removeCardEvent.emit({article: this.name, color: this.color, material: this.material});
+		this.removeCardEvent.emit({article: this.article, color: this.color, material: this.material});
 	}
 }

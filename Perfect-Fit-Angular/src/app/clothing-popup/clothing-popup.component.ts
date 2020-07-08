@@ -30,8 +30,10 @@ export class ClothingPopupComponent implements OnInit
 	
 	createOutfits(): void
 	{
+		this.eventFlagsService.openOutfitsTabFlag = true;
 		this.eventFlagsService.createOutfitsFlag = true;
+		this.eventFlagsService.selectedArticle  = {article: this.article, color: this.color, material: this.material};
+		
 		this.closePopupEvent.emit();
 	}
-	
 }

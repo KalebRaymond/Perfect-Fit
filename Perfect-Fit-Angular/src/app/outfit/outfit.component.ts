@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ClothesDbService } from '../clothes-db.service';
+import { ClothingObject } from '../clothing-object';
 
 @Component({
 	selector: 'app-outfit',
@@ -8,12 +9,7 @@ import { ClothesDbService } from '../clothes-db.service';
 })
 export class OutfitComponent implements OnInit 
 {
-	articles: Array<any> = [
-		{name: 'SHIRT', color: 'WHITE', material: 'COTTON'},
-		{name: 'PANTS', color: 'BLUE', material: 'DENIM'},
-		{name: 'JACKET', color: 'BLACK', material: 'LEATHER'},
-		{name: 'PANTS', color: 'BROWN', material: 'KHAKI'},
-	];
+	@Input('articles') articles: Array<ClothingObject> = [];
 	
 	constructor(private clothesService: ClothesDbService) { }
 

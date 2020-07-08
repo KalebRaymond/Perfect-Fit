@@ -39,6 +39,8 @@ export class ClothingFormComponent
 			color: '',
 			material: ''
 		});
+		
+		this.imgSrc = '';
 	}
 
 	onSubmit(): void

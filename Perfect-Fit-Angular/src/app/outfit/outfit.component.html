@@ -1,7 +1,7 @@
 <div class="spacer">
 	<div class="clothesContainer">
 		<div class="articleContainer" *ngFor="let curArticle of articles">
-			<p>{{ curArticle.name | titlecase }}</p>
+			<p>{{ curArticle.article | titlecase }}</p>
 			<div class="preview">
 				<img [src]="this.clothesService.getArticleImage(curArticle)">
 			</div>

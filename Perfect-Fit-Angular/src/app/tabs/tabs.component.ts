@@ -25,10 +25,10 @@ export class TabsComponent{
 	
 	ngDoCheck()
 	{
-		if(this.eventFlagsService.createOutfitsFlag == true)
+		if(this.eventFlagsService.openOutfitsTabFlag == true)
 		{
 			this.selectTab(this.tabChildren.last);
-			this.eventFlagsService.createOutfitsFlag = false;
+			this.eventFlagsService.openOutfitsTabFlag = false;
 		}
 	}
 	
