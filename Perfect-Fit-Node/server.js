@@ -89,6 +89,26 @@ app.post('/api/removeClothes', function(req, res)
 	return;
 });
 
+app.post('/api/getOutfits', function(req, res)
+{
+	var outfitsArray = [
+		[
+			{ article: 'SHIRT', color: 'RED', material: 'COTTON' },
+			{ article: 'SHIRT', color: 'RED', material: 'COTTON' },
+			{ article: 'SHIRT', color: 'RED', material: 'COTTON' }
+		],
+		[
+			{ article: 'SHIRT', color: 'WHITE', material: 'COTTON' },
+			{ article: 'SWEATPANTS', color: 'GRAY', material: 'COTTON' },
+		],
+		[
+			{ article: 'SWEATPANTS', color: 'RED', material: 'COTTON' },
+		]]
+
+	res.send(outfitsArray);
+	return;
+});
+
 app.get('/api/getClothes', function(req, res)
 {
 	sql = "SELECT * FROM myclothes";
