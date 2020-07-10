@@ -23,9 +23,12 @@ export class ClothingFormComponent
 	
 	postToServer(): void
 	{
-		var clothingObject = {	article: this.clothingForm.get('article').value,
+		var articleArr = JSON.parse(this.clothingForm.get('article').value);
+		
+		var clothingObject = {	article: articleArr[0],
 								color: this.clothingForm.get('color').value,
-								material: this.clothingForm.get('material').value
+								material: this.clothingForm.get('material').value,
+								type: articleArr[1]
 		};
 		
 		this.clothesService.addArticle(clothingObject);
@@ -52,7 +55,8 @@ export class ClothingFormComponent
 	
 	updateImage(): void
 	{
-		var curArticle = this.clothingForm.get('article').value.toUpperCase();
+		var curArticle = JSON.parse(this.clothingForm.get('article').value)[0];
+		
 		if(curArticle === '')
 		{
 			this.imgSrc = 'assets/DEFAULT.png';

@@ -3,11 +3,12 @@
 		<div id="container" class="articleDiv">
 			<label>Article:
 				<select formControlName="article" (change)="updateImage()" required>
-					<option value="Shirt">Shirt</option>
-					<option value="Pants">Pants</option>
-					<option value="Jacket">Jacket</option>
-					<option value="Sweatpants">Sweatpants</option>
-					<option value="Sweatshirt">Sweatshirt</option>
+					<option value='["SHIRT", "SHIRT"]'>Shirt</option>
+					<option value='["PANTS", "PANTS"]'>Pants</option>
+					<option value='["JACKET", "JACKET"]'>Jacket</option>
+					<option value='["SWEATPANTS", "PANTS"]'>Sweatpants</option>
+					<option value='["SWEATSHIRT", "JACKET"]'>Sweatshirt</option>
+					<option value='["BOMBER", "JACKET"]'>Bomber Jacket</option>
 				</select>
 				
 				<div *ngIf="article.invalid">
