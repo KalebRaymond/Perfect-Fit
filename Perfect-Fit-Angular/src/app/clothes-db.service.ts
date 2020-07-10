@@ -14,10 +14,15 @@ export class ClothesDbService
 		['PANTS_BROWN', true],
 		['SHIRT_RED', true],
 		['SHIRT_WHITE', true],
+		['SHIRT_BLUE', true],
+		['SHIRT_NAVY', true],
+		['SHIRT_PURPLE', true],
+		['SHIRT_BURGUNDY', true],
 		['SWEATSHIRT_BLACK', true],
 		['SWEATSHIRT_RED', true],
 		['SWEATPANTS_BLACK', true],
 		['SWEATPANTS_GRAY', true],
+		['BOMBER_GREEN', true]
 	]);
 	
 	headers = new HttpHeaders().set('Content-Type', 'application/json');
