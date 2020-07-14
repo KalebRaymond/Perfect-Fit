@@ -1,0 +1,23 @@
+{
+	"BLACK": "(\"RED\", \"ORANGE\", \"YELLOW\", \"GREEN\", \"BLUE\", \"PURPLE\", \"BROWN\", \"NAVY\", \"BURGUNDY\", \"GRAY\", \"WHITE\")",
+	"GRAY": "(\"RED\", \"ORANGE\", \"YELLOW\", \"BLUE\", \"PURPLE\", \"BROWN\", \"NAVY\", \"BURGUNDY\", \"WHITE\", \"BLACK\")",
+	"WHITE": "(\"RED\", \"ORANGE\", \"YELLOW\", \"GREEN\", \"BLUE\", \"PURPLE\", \"BROWN\", \"NAVY\", \"BURGUNDY\", \"GRAY\", \"BLACK\")",
+	
+	"RED": "(\"BLUE\", \"GRAY\", \"WHITE\", \"BLACK\")",
+	"ORANGE": "(\"BLUE\", \"NAVY\", \"GREEN\", \"PURPLE\", \"BROWN\", \"WHITE\", \"BLACK\")",
+	"YELLOW": "(\"BLUE\", \"NAVY\", \"GREEN\", \"BROWN\", \"WHITE\", \"BLACK\")",
+	"GREEN": "(\"BROWN\", \"ORANGE\", \"YELLOW\", \"PURPLE\", \"BURGUNDY\", \"WHITE\", \"BLACK\")",
+	"BLUE": "(\"RED\", \"ORANGE\", \"YELLOW\", \"PURPLE\",  \"BROWN\", \"BURGUNDY\", \"NAVY\", \"WHITE\", \"GRAY\", \"BLACK\")",
+	"PURPLE": "(\"ORANGE\", \"GREEN\", \"BLUE\", \"BROWN\", \"NAVY\", \"WHITE\", \"GRAY\", \"BLACK\")",
+	
+	"BROWN": "(\"ORANGE\", \"YELLOW\", \"GREEN\", \"BLUE\",  \"PURPLE\", \"NAVY\", \"BURGUNDY\", \"WHITE\", \"BLACK\")",
+	
+	"NAVY": "(\"ORANGE\", \"YELLOW\", \"BLUE\", \"PURPLE\", \"BROWN\", \"BURGUNDY\", \"WHITE\", \"GRAY\", \"BLACK\")",
+	
+	"BURGUNDY": "(\"GREEN\", \"BLUE\", \"BROWN\", \"NAVY\" \"WHITE\", \"GRAY\", \"BLACK\")"
+}
+	
+	
+	
+	
+	
