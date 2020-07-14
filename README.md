@@ -22,7 +22,7 @@ I chose to use MySQL for this project because I wanted to learn about databases,
 
 A more efficient approach might be to store the user's clothes as a graph. 
 
-![ClothesGraph](https://i.imgur.com/gGfzfs0.png)
+![ClothesGraph](https://i.imgur.com/gGfzfs0.png "test")
 
 Now inserting an article would require a BFS. For every node that matches with the new node, an edge is created. For an adjacency list this would take O(V + E) time. Deletions are essentially the same thing but with removing edges instead.
 
