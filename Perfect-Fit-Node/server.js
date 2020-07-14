@@ -99,10 +99,10 @@ async function getOutfits(selectedArticle)
 	* 	array of just pants:
 	*
 	*		[SHIRT] -> 	[JACKET][JACKET][JACKET][PANTS][PANTS]
-	*					   v	   v	   v
-	*					[PANTS]	[PANTS] [PANTS]
-	*					[PANTS]	[PANTS]
-	*							[PANTS]
+	*				   v	   v	   v
+	*				[PANTS]	[PANTS] [PANTS]
+	*				[PANTS]	[PANTS]
+	*					[PANTS]
 	*/
 	
 	//Retrieve all possible matching second articles from myclothesCopy
