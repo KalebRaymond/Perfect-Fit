@@ -12,7 +12,7 @@ export class EventFlagsService
 	openOutfitsTabFlag: boolean = false;
 	updateMyClothesFlag: boolean = false;
 	
-	selectedArticle: ClothingObject = {article: 'DEFAULT_A', color: 'DEFAULT_C', material: 'DEFAULT_M'};
+	selectedArticle: ClothingObject = {article: 'DEFAULT_A', color: 'DEFAULT_C', material: 'DEFAULT_M', type: 'DEFAULT_T', formality: -1};
 	
 	constructor() { }
 }

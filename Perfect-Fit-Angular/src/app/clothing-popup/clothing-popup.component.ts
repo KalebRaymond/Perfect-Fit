@@ -13,8 +13,12 @@ export class ClothingPopupComponent implements OnInit
 	@Input('articleName') article: string = 'DEFAULT_A';
 	@Input('color') color: string = 'DEFAULT_C';
 	@Input('material') material: string = 'DEFAULT_M';
+	@Input('type') type: string  = 'DEFAULT_T';
+	@Input('formality') formality: number  = -1;
 	@Input('imgSrc') imgSrc: string = 'assets/DEFAULT.png';
-	@Input('hide') hide: boolean = true;
+	
+	@Input('matchingFormalities') matchingFormalities: string = '';
+	@Input('matchingColors') matchingColors: string = '';
 	
 	constructor(private eventFlagsService: EventFlagsService) { }
 
@@ -32,7 +36,7 @@ export class ClothingPopupComponent implements OnInit
 	{
 		this.eventFlagsService.openOutfitsTabFlag = true;
 		this.eventFlagsService.createOutfitsFlag = true;
-		this.eventFlagsService.selectedArticle  = {article: this.article, color: this.color, material: this.material};
+		this.eventFlagsService.selectedArticle  = {article: this.article, color: this.color, material: this.material, type: this.type, formality: this.formality};
 		
 		this.closePopupEvent.emit();
 	}

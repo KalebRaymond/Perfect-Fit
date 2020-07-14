@@ -33,4 +33,9 @@ export class OutfitsComponent implements OnInit
 	{
 		this.outfits = this.clothesService.getOutfits(clothingObject);
 	}
+	
+	clearOutfits(): void
+	{
+		this.outfits = [];
+	}
 }

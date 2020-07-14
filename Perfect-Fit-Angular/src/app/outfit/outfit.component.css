@@ -1,13 +1,8 @@
-div.spacer
-{
-	width: 90vw;
-}
-
 div.clothesContainer
 {
 	display: inline-block;
 	margin: 20px;
-	padding-right: 15px;
+	padding-right: 10px;
 	float: left;
 	
 	background-color: #ffdbcb;
@@ -23,8 +18,9 @@ div.articleContainer
 	height: 270px;
 	float: left;
 	
-	margin-left: 15px;
+	margin-left: 10px;
 	margin-right: 10px;
+	margin-bottom: 20px;
 }
 
 div.preview
@@ -41,8 +37,8 @@ div.preview
 p
 {
 	display: inline-block;
-	margin-top: 10px;
-	margin-bottom: 5px;
+	margin-top: 7px;
+	margin-bottom: 7px;
 	float: left;
 	
 	color: #ee608d;

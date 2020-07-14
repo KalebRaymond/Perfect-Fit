@@ -2,13 +2,17 @@
 	<form [formGroup]="clothingForm" (ngSubmit)="onSubmit()">
 		<div id="container" class="articleDiv">
 			<label>Article:
+			<!-- To make this a text field with drop down suggestions as you type, look into https://github.com/ng-select/ng-select -->
 				<select formControlName="article" (change)="updateImage()" required>
-					<option value='["SHIRT", "SHIRT"]'>Shirt</option>
-					<option value='["PANTS", "PANTS"]'>Pants</option>
-					<option value='["JACKET", "JACKET"]'>Jacket</option>
-					<option value='["SWEATPANTS", "PANTS"]'>Sweatpants</option>
-					<option value='["SWEATSHIRT", "JACKET"]'>Sweatshirt</option>
-					<option value='["BOMBER", "JACKET"]'>Bomber Jacket</option>
+					<option value='["BLAZER", "JACKET", 2]'>Blazer</option>
+					<option value='["BOMBER", "JACKET", 0]'>Bomber Jacket</option>
+					<option value='["DRESS SHIRT", "SHIRT", 2]'>Dress shirt</option>
+					<option value='["PANTS", "PANTS", 1]'>Pants</option>
+					<option value='["SHIRT", "SHIRT", 1]'>Shirt</option>
+					<option value='["SLACKS", "PANTS", 2]'>Slacks</option>
+					<option value='["SWEATPANTS", "PANTS", 0]'>Sweatpants</option>
+					<option value='["SWEATSHIRT", "JACKET", 0]'>Sweatshirt</option>
+					<option value='["T-SHIRT", "SHIRT", 1]'>T-shirt</option>
 				</select>
 				
 				<div *ngIf="article.invalid">
@@ -28,16 +32,19 @@
 		<div id="container" class="materialDiv">
 			<label>Material:
 				<select formControlName="material" required>
-					<option value="Cotton">Cotton</option>
-					<option value="Denim">Denim</option>
-					<option value="Linen">Linen</option>
-					<option value="Nylon">Nylon</option>
+					<option value="COTTON">Cotton</option>
+					<option value="DENIM">Denim</option>
+					<option value="KHAKI">Khaki</option>
+					<option value="LINEN">Linen</option>
+					<option value="NYLON">Nylon</option>
+					<option value="POLYESTER">Polyester</option>
+					<option value="WOOL">Wool</option>
 				</select>
 			</label>
 		</div>
 
 		<div id="container" class="buttonDiv">
-			<button type="submit" [disabled]="!clothingForm.valid">Add +</button>
+			<button type="submit" [disabled]="!clothingForm.valid || this.imgSrc == 'assets/DEFAULT.png'">Add +</button>
 		</div>
 	</form>
 	

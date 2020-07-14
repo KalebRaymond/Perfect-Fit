@@ -9,7 +9,9 @@
 	<p class="more" (click)="openPopup()">More...</p>
 <div>
 
-<app-clothing-popup (closePopupEvent)="closePopup()" [hidden]="!this.popupOpen" 
+<app-clothing-popup *ngIf="this.popupOpen" (closePopupEvent)="closePopup()"  
 	[articleName]="this.article" [color]="this.color" [material]="this.material"
-	[imgSrc]="this.imgSrc">
+	[type]="this.type" [formality]="this.formality" [imgSrc]="this.imgSrc"
+	[matchingFormalities]="this.clothesService.getFormalities(this.formality)"
+	[matchingColors]="this.clothesService.getColors(this.color)">
 </app-clothing-popup>

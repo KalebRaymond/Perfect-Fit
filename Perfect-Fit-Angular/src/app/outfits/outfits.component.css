@@ -1,4 +1,119 @@
-div
+div.defaultContainer, div.outfitsContainer
 {
+	margin: 15px;
+	overflow: auto;
+}
+
+div.defaultContainer
+{
+	display: block;
 	
+	background-color: #ffdbcb;
+	width: 635px;
+	margin: 35px;
+	
+	box-shadow: 12px 12px #ee608d;
+}
+
+div.outfitsContainer > button
+{
+	margin: 20px;
+	margin-bottom: 0px;
+	background-color: #ffdbcb;
+	color: #ee608d;
+	
+	font-family: source code pro black;
+	font-size: 12pt;
+	
+	border: solid 3px #ffdbcb;
+	box-shadow: 6px 6px #ee608d;
+}
+
+div.occasion, div.weather, div.colorSchemeDiv
+{
+	display: inline-block;
+	
+	border: 2px solid #ee608d;
+	
+	background-color: #fffbf9;
+	box-shadow: 3px 3px #ee608d;
+	
+	cursor: pointer;
+}
+
+div.container
+{
+	margin: 20px;
+}
+
+div.container > *
+{
+	margin-right: 10px;
+}
+
+div.weather
+{
+	height: 46px;
+}
+
+div.colorSchemeDiv
+{
+	width: 84px;
+	height: 36px;
+	border-radius: 30px;
+}
+
+p
+{
+	color: #ee608d;
+	margin-top: 15px;
+	margin-left: 20px;
+	margin-bottom: 0px;
+}
+
+p.pHeader
+{
+	font-size: 20pt;
+}
+
+div.occasion > p
+{
+	display: block;
+	margin: 8px;
+}
+
+div.weather > p
+{
+	display: inline-block;
+	margin-left: 5px;
+	margin-right: 4px;
+	margin-top: 0px;
+	position: relative;
+	top: -18px;
+}
+
+hr
+{
+	border: 1px solid #ee608d;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+img.scheme
+{
+	display: block;
+	margin: auto;
+	margin-top: 2px;
+}
+
+img.forecast
+{
+	display: inline-block;
+	margin: 4px;
+	
+	width: 36px;
+	height: 36px;
+	background: white;
+	border: 1px solid black;
+	border-radius: 20px;
 }

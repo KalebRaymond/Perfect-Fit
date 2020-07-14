@@ -17,7 +17,7 @@ export class ClothingFormComponent
 	clothingForm = this.fb.group(
 	{
 		article: ['', [Validators.required, Validators.minLength(5)] ],
-		color: [''],
+		color: ['', Validators.required],
 		material: ['', Validators.required]
 	});
 	
@@ -28,7 +28,8 @@ export class ClothingFormComponent
 		var clothingObject = {	article: articleArr[0],
 								color: this.clothingForm.get('color').value,
 								material: this.clothingForm.get('material').value,
-								type: articleArr[1]
+								type: articleArr[1],
+								formality: articleArr[2]
 		};
 		
 		this.clothesService.addArticle(clothingObject);
@@ -38,7 +39,7 @@ export class ClothingFormComponent
 	{
 		this.clothingForm.patchValue(
 		{
-			article: '',
+			//article: '', //The article field can be left in case use wants to add multiple of some article in different colors
 			color: '',
 			material: ''
 		});

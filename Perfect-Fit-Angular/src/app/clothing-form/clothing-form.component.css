@@ -1,11 +1,11 @@
 div.clothingFormCard
 {
-	display: inline-block;
+	display: block;
 	
 	background-color: #ffdbcb;
-	width: 800px;
+	width: 635px;
 	height: 300px;
-	margin: 45px;
+	margin: 35px;
 	
 	box-shadow: 12px 12px #ee608d;
 }
@@ -79,6 +79,7 @@ button
 button:disabled
 {
 	background-color: #808080;
+	border-color: #808080;
 	box-shadow: 6px 6px #505050;
 	color: #505050;
 }
@@ -90,7 +91,7 @@ div.preview
 	
 	width: 200px;
 	height: 260px;
-	margin: 16px 60px;
+	margin: 16px 0px 16px 60px;
 	
 	background-color: white;
 	border: solid 5px #ee608d;

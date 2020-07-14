@@ -12,19 +12,59 @@ export class ClothesDbService
 	validPaths = new Map([
 		['PANTS_BLUE', true],
 		['PANTS_BROWN', true],
-		['SHIRT_RED', true],
+		['SLACKS_BLACK', true],
+		['SLACKS_GRAY', true],
 		['SHIRT_WHITE', true],
+		['SHIRT_RED', true],
+		['SHIRT_GREEN', true],
 		['SHIRT_BLUE', true],
-		['SHIRT_NAVY', true],
 		['SHIRT_PURPLE', true],
+		['SHIRT_NAVY', true],
 		['SHIRT_BURGUNDY', true],
+		['DRESS SHIRT_WHITE', true],
+		['DRESS SHIRT_GREEN', true],
+		['DRESS SHIRT_BLUE', true],
+		['DRESS SHIRT_NAVY', true],
+		['T-SHIRT_WHITE', true],
+		['T-SHIRT_RED', true],
+		['T-SHIRT_GREEN', true],
+		['T-SHIRT_BLUE', true],
+		['T-SHIRT_PURPLE', true],
+		['T-SHIRT_NAVY', true],
+		['T-SHIRT_BURGUNDY', true],
 		['SWEATSHIRT_BLACK', true],
 		['SWEATSHIRT_RED', true],
 		['SWEATPANTS_BLACK', true],
 		['SWEATPANTS_GRAY', true],
-		['BOMBER_GREEN', true]
+		['BOMBER_GREEN', true],
+		['BLAZER_BLACK', true],
+		['BLAZER_NAVY', true],
+		['BLAZER_GRAY', true]
 	]);
 	
+	//colorMatches is copied from colorMatches.json (because pinging the server would be really slow, and for 
+	//proof of concept purposes the colorMatches isn't going to change).
+	colorMatches = 
+	{
+		'BLACK': 'Red, Orange, Yellow, Green, Blue, Purple, Brown, Navy, Burgundy, Gray, White',
+		'GRAY': 'Red, Orange, Yellow, Blue, Purple, Brown, Navy, Burgundy, White, Black',
+		'WHITE': 'Red, Orange, Yellow, Green, Blue, Purple, Brown, Navy, Burgundy, Gray, Black',
+		
+		'RED': 'Blue, Gray, White, Black',
+		'ORANGE': 'Blue, Navy, Green, Purple, Brown, White, Black',
+		'YELLOW': 'Blue, Navy, Green, Brown, White, Black',
+		'GREEN': 'Brown, Orange, Yellow, Purple, Burgundy, White, Black',
+		'BLUE': 'Red, Orange, Yellow, Purple, Brown, Burgundy, Navy, White, Gray, Black',
+		'PURPLE': 'Orange, Green, Blue, Brown, Navy, White, Gray, Black',
+		
+		'BROWN': 'Orange, Yellow, Green, Blue, Purple, Navy, Burgundy, White, Black',
+		
+		'NAVY': 'Orange, Yellow, Blue, Purple, Brown, Burgundy, White, Gray, Black',
+		
+		'BURGUNDY': 'Green, Blue, Brown, Navy, White, Gray, Black'
+	};
+	
+	formalities = ['Streetwear', 'Casual', 'Business Casual', 'Business Formal'];
 	headers = new HttpHeaders().set('Content-Type', 'application/json');
 	
 	constructor(private http: HttpClient) { }
@@ -38,8 +78,8 @@ export class ClothesDbService
 			.subscribe(data => {
 				for (var i in data)
 				{
-					clothes.push( new ClothingCardComponent() );
-					clothes[i].setProperties(data[i].article, data[i].color, data[i].material);
+					clothes.push( new ClothingCardComponent(this) );
+					clothes[i].setProperties(data[i].article, data[i].color, data[i].material, data[i].type, data[i].formality);
 				}
 			},
 			error => {
@@ -123,7 +163,9 @@ export class ClothesDbService
 						var newArticle = {
 											article: data[curOutfit][curArticle].article,
 											color: data[curOutfit][curArticle].color,
-											material: data[curOutfit][curArticle].material
+											material: data[curOutfit][curArticle].material,
+											type: data[curOutfit][curArticle].type,
+											formality: data[curOutfit][curArticle].type,
 						}
 						
 						newOutfit.articles.push(newArticle);
@@ -137,5 +179,18 @@ export class ClothesDbService
 			});
 			
 		return outfits;
+	}
+	
+	getFormalities(formality: number): string
+	{
+		//formality ranges between 0 for casual and 2 for formal. this.formalities has four values representing
+		//different formalities, from -1 to 2. To get the correct formality, the value passed to this function
+		//must be incremented by 1.
+		return this.formalities[formality + 1] + ' / ' + this.formalities[formality];
+	}
+	
+	getColors(color: string): string
+	{
+		return this.colorMatches[color.toUpperCase()];
 	}
 }

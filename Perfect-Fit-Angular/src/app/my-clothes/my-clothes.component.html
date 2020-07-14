@@ -1,6 +1,6 @@
 <div class="clothesContainer">
 	<app-clothing-card *ngFor="let article of myClothes" (removeCardEvent)="removeArticle($event)"
 		[articleName]="article.article" [color]="article.color" [material]="article.material"
-		[imgSrc]="this.clothesService.getArticleImage(article)">
+		[type]="article.type" [formality]="article.formality" [imgSrc]="this.clothesService.getArticleImage(article)">
 	</app-clothing-card>
 </div>

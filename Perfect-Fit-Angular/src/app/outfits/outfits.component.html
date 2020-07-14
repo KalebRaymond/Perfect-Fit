@@ -1,3 +1,72 @@
-<div class="outfitsContainer" *ngFor="let curOutfit of outfits">
-	<app-outfit [articles]="curOutfit.articles"></app-outfit>
+<div class="defaultContainer" *ngIf="this.outfits.length == 0">
+	<p class="pHeader">Create outfits based on...</p>
+	<div class="colorDiv">
+		<p>Color schemes</p>
+		<hr>
+		<div class="container">
+			<div class="colorSchemeDiv">
+				<img class="scheme" src="assets/scheme1.png">
+			</div>
+			<div class="colorSchemeDiv">
+				<img class="scheme" src="assets/scheme2.png">
+			</div>
+			<div class="colorSchemeDiv">
+				<img class="scheme" src="assets/scheme3.png">
+			</div>
+			<div class="colorSchemeDiv">
+				<img class="scheme" src="assets/scheme4.png">
+			</div>
+			<div class="colorSchemeDiv">
+				<img class="scheme" src="assets/scheme5.png">
+			</div>
+		</div>
+	</div>
+	
+	<div class="weatherDiv">
+		<p>Weather</p>
+		<hr>
+		<div class="container">
+			<div class="weather">
+				<img class="forecast" src=".png">
+				<p>Sun</p>
+			</div>
+			<div class="weather">
+				<img class="forecast" src=".png">
+				<p>Rain</p>
+			</div>
+			<div class="weather">
+				<img class="forecast" src=".png">
+				<p>Snow</p>
+			</div>
+			<div class="weather">
+				<img class="forecast" src=".png">
+				<p>Wind</p>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="occasionDiv">
+		<p>Occasion</p>
+		<hr>
+		<div class="container">
+			<div class="occasion">
+				<p>Business Formal</p>
+			</div>
+			<div class="occasion">
+				<p>Business Casual</p>
+			</div>
+			<div class="occasion">
+				<p>Casual</p>
+			</div>
+			<div class="occasion">
+				<p>Streetwear</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="outfitsContainer" *ngIf="this.outfits.length != 0">
+	<button (click)="clearOutfits()">Return to outfits menu</button>
+	<app-outfit  *ngFor="let curOutfit of outfits" [articles]="curOutfit.articles"></app-outfit>
 </div>

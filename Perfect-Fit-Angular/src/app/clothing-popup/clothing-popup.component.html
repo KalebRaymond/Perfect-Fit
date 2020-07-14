@@ -7,20 +7,15 @@
 		<img src={{this.imgSrc}}>
 	</div>
 	
+	<div class="dressCodes">
+		<p>{{ matchingFormalities }}</p>
+	</div>
+	
 	<div class="colorDiv">
 		<p>Color: {{ color | titlecase }}</p>
-		<p class="matches">Matches with: </p>
+		<p class="matches">Matches with: {{ matchingColors }}</p>
 	</div>
 	
-	<div class="materialDiv">
-		<p>Material: {{ material | titlecase }}</p>
-		<p class="matches">Matches with: </p>
-	</div>
-	
-	<div class="dressCodes">
-		<p>Business Casual / Casual / Streetwear</p>
-	</div>
-	
-	<p class="close" (click)="closeMe()">Close<p>
-	<p class="outfits" (click)="createOutfits()">Create outfits<p>
+	<p class="close" (click)="closeMe()">Close</p>
+	<p class="outfits" (click)="createOutfits()">Create outfits</p>
 </div>
