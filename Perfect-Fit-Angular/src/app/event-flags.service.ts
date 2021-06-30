@@ -1,5 +1,3 @@
-/*	Why angular doesn't natively support event propogation is beyond me. */
-
 import { Injectable } from '@angular/core';
 import { ClothingObject } from './clothing-object';
 
